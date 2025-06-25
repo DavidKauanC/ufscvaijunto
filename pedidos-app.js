@@ -1,7 +1,7 @@
 // Aguarda o conteúdo da página ser totalmente carregado
 document.addEventListener('DOMContentLoaded', function() {
   
-  // A URL da sua API do SheetDB para a planilha de PEDIDOS
+
   const sheetDBUrl = 'https://sheetdb.io/api/v1/b2758640nqwd6';
 
   const pedidosContainer = document.getElementById('pedidos-container');
@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
       pedidosContainer.innerHTML = '<p>Ocorreu um erro ao carregar os pedidos. Tente novamente mais tarde.</p>';
     });
 
-  // --- NOVA LÓGICA DE CÓPIA AQUI ---
   // Adiciona um único "escutador de eventos" ao container principal para gerenciar todos os botões de cópia.
   pedidosContainer.addEventListener('click', function(event) {
     // Procura por um botão .copy-btn que tenha sido clicado

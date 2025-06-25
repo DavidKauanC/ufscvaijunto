@@ -1,7 +1,5 @@
-// Aguarda o conteúdo da página ser totalmente carregado
 document.addEventListener('DOMContentLoaded', function() {
   
-  // A URL da sua API do SheetDB (a mesma do formulário de 'oferecer.html')
   const sheetDBUrl = 'https://sheetdb.io/api/v1/njhrwhu3xo8rg';
 
   const caronasContainer = document.getElementById('caronas-container');
@@ -24,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const card = document.createElement('div');
         card.className = 'carona-card';
 
-        // --- ALTERAÇÃO AQUI ---
         // Adicionamos um botão de copiar ao lado do contato.
         // Usamos um atributo `data-contact` para armazenar o valor a ser copiado.
         card.innerHTML = `
@@ -51,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
       caronasContainer.innerHTML = '<p>Ocorreu um erro ao carregar as caronas. Tente novamente mais tarde.</p>';
     });
 
-  // --- NOVA FUNCIONALIDADE AQUI ---
   // Adiciona um único "escutador de eventos" ao container principal.
   // Isso é mais eficiente do que adicionar um para cada botão. (Event Delegation)
   caronasContainer.addEventListener('click', function(event) {
