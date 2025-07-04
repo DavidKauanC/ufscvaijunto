@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   
-  const sheetDBUrl = 'https://sheetdb.io/api/v1/njhrwhu3xo8rg';
+  const sheetDBUrl = 'https://sheetdb.io/api/v1/njhrwhu3xo8rg?sheet=ofertas';
 
   const caronasContainer = document.getElementById('caronas-container');
   const loadingMessage = document.getElementById('loading-message');
@@ -24,14 +24,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Adicionamos um botão de copiar ao lado do contato.
         // Usamos um atributo `data-contact` para armazenar o valor a ser copiado.
+        // Dentro de app.js
         card.innerHTML = `
-          <h3><i class="fa-solid fa-route"></i> De: ${carona.origem} Para: ${carona.destino}</h3>
+          <h3><i class="fa-solid fa-route"></i> De: ${carona.origem} <br> Para: ${carona.destino}</h3>
           <p><i class="fa-solid fa-user-check"></i> <strong>Motorista:</strong> ${carona.nome}</p>
           <p><i class="fa-solid fa-calendar-days"></i> <strong>Data:</strong> ${new Date(carona.data).toLocaleDateString('pt-BR', { timeZone: 'UTC' })}</p>
           <p><i class="fa-solid fa-clock"></i> <strong>Hora:</strong> ${carona.hora}</p>
           <p><i class="fa-solid fa-chair"></i> <strong>Vagas:</strong> ${carona.vagas}</p>
-          <p>
-            <i class="fa-solid fa-address-book"></i> <strong>Contato:</strong> ${carona.contato}
+          
+          <p class="contact-line">
+            <span><i class="fa-solid fa-address-book"></i> <strong>Contato:</strong> ${carona.contato}</span>
             <button class="copy-btn" data-contact="${carona.contato}">
               <i class="fa-solid fa-copy"></i> Copiar
             </button>

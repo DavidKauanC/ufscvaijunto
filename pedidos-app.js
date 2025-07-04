@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   
 
-  const sheetDBUrl = 'https://sheetdb.io/api/v1/b2758640nqwd6';
+  const sheetDBUrl = 'https://sheetdb.io/api/v1/njhrwhu3xo8rg?sheet=pedidos';
 
   const pedidosContainer = document.getElementById('pedidos-container');
   const loadingMessage = document.getElementById('loading-message');
@@ -26,13 +26,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // --- ALTERAÇÃO NO CARD ---
         // Adicionamos ícones para consistência e o novo botão de copiar.
+        // Dentro de pedidos-app.js
         card.innerHTML = `
-          <h3><i class="fa-solid fa-route"></i> De: ${pedido.origem} Para: ${pedido.destino}</h3>
+          <h3><i class="fa-solid fa-route"></i> De: ${pedido.origem} <br> Para: ${pedido.destino}</h3>
           <p><i class="fa-solid fa-user"></i> <strong>Solicitante:</strong> ${pedido.nome}</p>
           <p><i class="fa-solid fa-calendar-day"></i> <strong>Data Preferencial:</strong> ${new Date(pedido.data_preferencial).toLocaleDateString('pt-BR', { timeZone: 'UTC' })}</p>
-          <p>
-            <i class="fa-solid fa-address-book"></i> <strong>Contato:</strong> ${pedido.contato}
-            
+          
+          <p class="contact-line">
+            <span><i class="fa-solid fa-address-book"></i> <strong>Contato:</strong> ${pedido.contato}</span>
             <button class="copy-btn" data-contact="${pedido.contato}">
               <i class="fa-solid fa-copy"></i> Copiar
             </button>

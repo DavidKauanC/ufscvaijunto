@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sugestões - UFSCVaiJunto</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="img/logouvj.png">
+</head>
+<body>
+
+  <header>
+    <h1><i class="fa-solid fa-lightbulb"></i> Deixe sua Sugestão</h1>
+    <p>Sua opinião é muito importante para melhorarmos o UFSCVaiJunto!</p>
+  </header>
+
+  <main>
+    <form action="https://sheetdb.io/api/v1/njhrwhu3xo8rg?sheet=sugestoes" method="POST" id="form-sugestao">
+    <input type="hidden" name="data[data_envio]" id="data_envio">
+
+      <div class="form-group">
+        <label for="nome"><i class="fa-solid fa-user"></i> Nome (Opcional):</label>
+        <input type="text" name="data[nome]" id="nome" placeholder="Como podemos te chamar?">
+      </div>
+
+      <div class="form-group">
+        <label for="tipo_sugestao"><i class="fa-solid fa-tags"></i> Tipo de Sugestão:</label>
+        <select name="data[tipo_sugestao]" id="tipo_sugestao" required>
+            <option value="" disabled selected>Selecione uma categoria...</option>
+            <option value="Melhoria">Melhoria em algo que já existe</option>
+            <option value="Nova Funcionalidade">Ideia para algo novo</option>
+            <option value="Correcao de Bug">Relatar um problema ou erro</option>
+            <option value="Outro">Outro</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="sugestao"><i class="fa-solid fa-pen-nib"></i> Sua Sugestão:</label>
+        <textarea name="data[sugestao]" id="sugestao" rows="6" placeholder="Descreva sua ideia em detalhes..." required></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="contato_opcional"><i class="fa-solid fa-envelope"></i> Contato (Opcional):</label>
+        <input type="email" name="data[contato_opcional]" id="contato_opcional" placeholder="Seu e-mail, caso queiramos entrar em contato">
+      </div>
+
+      <button type="submit" id="submit-button"><i class="fa-solid fa-paper-plane"></i> Enviar Sugestão</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Entre em contato: ufscvaijunto@gmail.com</p>
+    <div class="copyright">
+      &copy; <span id="current-year"></span> UFSCVaiJunto. Todos os direitos reservados.
+    </div>
+  </footer>
+  
+  <script>
+    // Seta a data de envio automática
+    document.getElementById('data_envio').value = new Date().toISOString();
+  
+    const form = document.getElementById('form-sugestao');
+    const submitButton = document.getElementById('submit-button');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      submitButton.disabled = true;
+      submitButton.textContent = 'Enviando...';
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.created >= 1) { // SheetDB retorna "created: 1" ou mais
+          window.location.href = 'sucesso.html'; 
+        } else {
+          alert('Ocorreu um erro ao enviar sua sugestão. Tente novamente.');
+          submitButton.disabled = false;
+          submitButton.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Enviar Sugestão';
+        }
+      })
+      .catch(error => {
+        console.error('Erro:', error);
+        alert('Ocorreu um erro de conexão. Tente novamente.');
+        submitButton.disabled = false;
+        submitButton.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Enviar Sugestão';
+      });
+    });
+  </script>
+  
+  <style>
+    form select {
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: 1px solid #4A5568;
+        background-color: #1A202C;
+        color: #F7FAFC;
+        transition: all 0.3s ease;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23A0AEC0%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22/%3E%3C/svg%3E');
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: .65em auto;
+    }
+    form select:focus {
+        outline: none;
+        border-color: #0054A6;
+        box-shadow: 0 0 0 3px rgba(0, 84, 166, 0.4);
+    }
+  </style>
+  <script>
+    // Pega o ano atual e insere no elemento com id="current-year"
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+
+  </body>
+</html>

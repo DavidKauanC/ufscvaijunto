@@ -18,7 +18,7 @@
   </header>
 
   <main>
-    <form action="https://sheetdb.io/api/v1/njhrwhu3xo8rg" method="POST" id="form-oferecer">
+    <form action="https://sheetdb.io/api/v1/njhrwhu3xo8rg?sheet=ofertas" method="POST" id="form-oferecer">
       <label for="nome">Nome:</label>
       <input type="text" name="data[nome]" id="nome" placeholder="Seu nome" required />
 
@@ -45,7 +45,10 @@
   </main>
 
   <footer>
-    <p>Entre em contato: ufscvaijunto@gmail.com</p>
+  <p>Entre em contato: ufscvaijunto@gmail.com</p>
+  <div class="copyright">
+    &copy; <span id="current-year"></span> UFSCVaiJunto. Todos os direitos reservados.
+  </div>
   </footer>
 
  <script>
@@ -86,6 +89,10 @@
       });
     });
   </script>
+  <script>
+    // Pega o ano atual e insere no elemento com id="current-year"
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
 
-</body>
+  </body>
 </html>

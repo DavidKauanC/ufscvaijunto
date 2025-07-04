@@ -1,3 +1,7 @@
+/* ============================================== */
+/* === TEMA ESCURO UFSC - CSS CORRIGIDO === */
+/* ============================================== */
+
 /* Reset Básico */
 * {
   margin: 0;
@@ -9,33 +13,36 @@
 html, body {
   height: 100%;
   font-family: 'Poppins', sans-serif;
-  background-color: #f8f9fa;
-  color: #333; /* Cor de texto principal mais suave */
+  background-color: #1A202C;
+  color: #F7FAFC;
   display: flex;
   flex-direction: column;
-  line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
+  line-height: 1.6;
 }
 
 /* Cabeçalho */
 header {
-  background-color: #176B87; /* Cor de fallback para navegadores antigos */
-  background-image: linear-gradient(to bottom, #1A7C9C, #176B87); /* Gradiente sutil */
+  background-color: transparent;
   color: white;
   padding: 40px 20px;
   text-align: center;
-  border-bottom: 4px solid #86B6F6;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra mais suave */
+  border-bottom: 1px solid #2D3748;
 }
 
 header h1 {
-  font-size: 36px;
+  font-size: 42px;
   font-weight: 700;
+  background: linear-gradient(45deg, #0054A6 30%, #FFD700 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 header p {
   font-size: 16px;
   margin-top: 8px;
-  opacity: 0.9;
+  color: #A0AEC0;
 }
 
 /* Corpo Principal */
@@ -45,7 +52,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* Para acomodar os containers de cards e formulários */
+  flex-direction: column;
 }
 
 .hero {
@@ -56,14 +63,14 @@ main {
 .hero h1 {
   font-size: 28px;
   margin-bottom: 16px;
-  color: #0f2b3d;
+  color: #FFFFFF;
 }
 
 .hero p {
   font-size: 18px;
   margin-bottom: 32px;
-  color: #555;
-  max-width: 600px; /* Limita a largura da linha para conforto de leitura */
+  color: #A0AEC0;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -78,46 +85,44 @@ main {
 
 .button {
   padding: 14px 28px;
-  background-color: #86B6F6;
+  background-color: #0054A6;
   color: white;
   text-decoration: none;
   border-radius: 8px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   border: none;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15); /* Sombra para profundidade */
-  transition: all 0.3s ease; /* Transição suave para todas as propriedades */
+  transition: all 0.3s ease;
+  display: inline-flex; /* CORREÇÃO AQUI: Garante alinhamento correto */
+  align-items: center; /* CORREÇÃO AQUI: Centraliza ícone e texto */
+  justify-content: center; /* CORREÇÃO AQUI: Centraliza o conteúdo */
+  white-space: nowrap; /* CORREÇÃO AQUI: Impede a quebra de linha do texto */
 }
 
 .button:hover {
-  background-color: #176B87;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra mais forte no hover */
-  transform: translateY(-2px); /* Efeito de elevação sutil */
+  background-color: #FFD700;
+  color: #1A202C;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
 }
 
-/* Estilos para Ícones (Font Awesome) */
-.button i, .carona-card i {
-  margin-right: 8px; /* Espaço entre o ícone e o texto */
+/* Estilos para Ícones */
+.button i, .carona-card i, form label i {
+  margin-right: 10px;
 }
 
 /* Estilos para Formulários */
-/* Estilos para Formulários (Versão Melhorada) */
 form {
-  background-color: #ffffff;
+  background-color: #2D3748;
   max-width: 500px;
   width: 100%;
   margin: 40px auto;
-  padding: 40px; /* Mais preenchimento interno */
+  padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.09); /* Sombra mais pronunciada */
+  border: 1px solid #4A5568;
   display: flex;
   flex-direction: column;
-  gap: 25px; /* Mais espaço entre os campos */
-  border-top: 5px solid #176B87; /* Detalhe de borda no topo */
-}
-
-.form-group {
-  width: 100%;
+  gap: 25px;
 }
 
 form label {
@@ -125,58 +130,51 @@ form label {
   align-items: center;
   font-weight: 600;
   font-size: 16px;
-  color: #0f2b3d; /* Cor mais escura para a label */
+  color: #F7FAFC;
   margin-bottom: 8px;
 }
 
 form label i {
-  color: #86B6F6; /* Ícone com a cor azul clara */
-  margin-right: 10px;
-  font-size: 1.1em; /* Ícone um pouco maior */
+  color: #0054A6;
 }
 
-form input {
+form input , form textarea {
   width: 100%;
-  padding: 14px; /* Inputs maiores e mais fáceis de clicar */
+  padding: 14px;
   font-size: 16px;
   border-radius: 8px;
-  border: 1px solid #dcdcdc; /* Borda mais suave */
-  background-color: #fdfdfd;
+  border: 1px solid #4A5568;
+  background-color: #1A202C;
+  color: #F7FAFC;
   transition: all 0.3s ease;
+}
+
+form input[type="date"],
+form input[type="time"] {
+  color-scheme: dark;
 }
 
 form input:focus {
   outline: none;
-  border-color: #86B6F6; /* Borda azul ao focar */
-  box-shadow: 0 0 0 3px rgba(134, 182, 246, 0.25); /* Brilho suave ao focar */
+  border-color: #0054A6;
+  box-shadow: 0 0 0 3px rgba(0, 84, 166, 0.4);
 }
 
+/* CORREÇÃO AQUI: Unificando o estilo do botão do formulário com a classe .button */
 form button {
-  padding: 15px;
-  font-size: 18px; /* Texto do botão maior */
+  padding: 14px 28px;
+  font-size: 16px;
   font-weight: 600;
   border: none;
   border-radius: 8px;
-  background-color: #86B6F6;
+  background-color: #0054A6;
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
-form button:hover {
-  background-color: #176B87;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-form button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
-
-/* Estilos para os Cards de Carona e Pedidos */
+/* Estilos para os Cards */
 #caronas-container, #pedidos-container {
   max-width: 800px;
   width: 100%;
@@ -186,71 +184,68 @@ form button:disabled {
 }
 
 .carona-card {
-  background-color: #ffffff;
+  background-color: #2D3748;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  border-left: 5px solid #176B87;
+  border: 1px solid #4A5568;
+  border-left: 5px solid #0054A6;
   text-align: left;
   transition: all 0.3s ease;
 }
 
 .carona-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  border-color: #0054A6;
 }
 
 .carona-card h3 {
-  color: #0f2b3d;
+  color: #FFFFFF;
   margin-bottom: 15px;
-  font-size: 20px;
-  line-height: 1.4;
 }
 
 .carona-card p {
-  color: #333;
+  color: #A0AEC0;
   margin-bottom: 8px;
   font-size: 16px;
-  display: flex; /* Para alinhar ícones e texto verticalmente */
+  display: flex;
   align-items: center;
 }
-
 .carona-card p strong {
-  color: #111;
-  margin-right: 5px;
+    color: #F7FAFC;
 }
 
-/* Rodapé */
-footer {
-  background-color: #e9f1f7;
-  text-align: center;
-  padding: 20px 10px;
-  font-size: 14px;
-  color: #333;
-  border-top: 2px solid #86B6F6;
-}
-/* Estilo para o botão de Copiar Contato */
+/* Botão de Copiar */
 .copy-btn {
   padding: 5px 10px;
   font-size: 12px;
   font-weight: 600;
-  border: 1px solid #86B6F6;
-  background-color: #f0f8ff; /* Um azul bem clarinho */
-  color: #176B87;
+  border: 1px solid #0054A6;
+  background-color: transparent;
+  color: #0054A6;
   border-radius: 6px;
   cursor: pointer;
-  margin-left: 10px; /* Espaço entre o contato e o botão */
+  margin-left: 10px;
   transition: all 0.2s ease;
 }
 
 .copy-btn:hover {
-  background-color: #86B6F6;
+  background-color: #0054A6;
   color: white;
 }
 
-/* Estilo para quando o botão for clicado e o texto copiado com sucesso */
 .copy-btn.success {
-  background-color: #28a745; /* Cor verde de sucesso */
+  background-color: #009639; /* Verde UFSC */
   color: white;
-  border-color: #28a745;
+  border-color: #009639;
+}
+
+/* Rodapé */
+footer {
+  background-color: transparent;
+  text-align: center;
+  padding: 25px 10px;
+  font-size: 14px;
+  color: #A0AEC0;
+  border-top: 1px solid #2D3748;
+  margin-top: 40px;
 }

@@ -4,25 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Enviado com Sucesso - UFSCVaiJunto</title>
+  
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link rel="shortcut icon" href="img/logouvj.png">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  
   <style>
-    /* Estilo adicional para centralizar o conteúdo da página de sucesso */
     .success-container {
       text-align: center;
       padding: 40px;
-      background-color: #fff;
+      background-color: #fff; /* Fundo branco intencional */
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.09);
       max-width: 500px;
+      border-top: 5px solid #0054A6; /* Azul UFSC para consistência */
     }
+
+    /* Define cores escuras para o texto dentro da caixa branca */
     .success-container h1 {
-      color: #176B87;
-      margin-bottom: 16px;
+      color: #394867; /* Nosso Azul Meia-Noite */
     }
+
     .success-container p {
+      color: #1F2937; /* Nosso Grafite Suave */
       margin-bottom: 32px;
       font-size: 18px;
     }
@@ -45,7 +54,14 @@
 
   <footer>
     <p>Entre em contato: ufscvaijunto@gmail.com</p>
+    <div class="copyright">
+      &copy; <span id="current-year"></span> UFSCVaiJunto. Todos os direitos reservados.
+    </div>
   </footer>
+  <script>
+    // Pega o ano atual e insere no elemento com id="current-year"
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
 
-</body>
+  </body>
 </html>
