@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Oferecer Carona - UFSCVaiJunto</title>
+  <title>Oferecer Carona - AcademyWay</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
@@ -19,6 +19,7 @@
 
   <main>
     <form action="https://sheetdb.io/api/v1/njhrwhu3xo8rg?sheet=ofertas" method="POST" id="form-oferecer">
+      <input type="hidden" name="data[id_carona]" id="id_carona"> 
       <label for="nome">Nome:</label>
       <input type="text" name="data[nome]" id="nome" placeholder="Seu nome" required />
 
@@ -45,9 +46,9 @@
   </main>
 
   <footer>
-  <p>Entre em contato: ufscvaijunto@gmail.com</p>
+  <p>Entre em contato: academyway@gmail.com</p>
   <div class="copyright">
-    &copy; <span id="current-year"></span> UFSCVaiJunto. Todos os direitos reservados.
+    &copy; <span id="current-year"></span> AcademyWay. Todos os direitos reservados.
   </div>
   </footer>
 
@@ -93,6 +94,13 @@
     // Pega o ano atual e insere no elemento com id="current-year"
     document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>
+  <script>
+    // Gera um ID único para a carona quando a página carrega
+    function generateUniqueId() {
+      return 'carona_' + Date.now() + Math.random().toString(36).substring(2, 9);
+    }
+    document.getElementById('id_carona').value = generateUniqueId();
+  </script>
 
-  </body>
+</body>
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Minhas Caronas - AcademyWay</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  </head>
+<body>
+
+  <header>
+    <h1><i class="fa-solid fa-user-check"></i> Minhas Caronas</h1>
+    <p>Encontre suas ofertas e veja os lances recebidos.</p>
+  </header>
+
+  <main>
+    <div class="search-container">
+      <form id="search-form">
+        <label for="search-name-input">Digite o nome usado ao oferecer a carona:</label>
+        <div class="input-with-icon">
+           <i class="fa-solid fa-magnifying-glass"></i>
+           <input type="text" id="search-name-input" placeholder="Seu nome de motorista..." required>
+        </div>
+        <button type="submit" class="button">Buscar Minhas Caronas</button>
+      </form>
+    </div>
+
+    <div id="my-rides-container"></div>
+    
+    <div id="bids-container"></div>
+  </main>
+
+  <footer>
+    <div class="copyright">
+      &copy; <span id="current-year"></span> AcademyWay. Todos os direitos reservados.
+    </div>
+  </footer>
+  
+  <script> document.getElementById('current-year').textContent = new Date().getFullYear(); </script>
+  <script src="minhas-caronas.js"></script>
+
+</body>
+</html>

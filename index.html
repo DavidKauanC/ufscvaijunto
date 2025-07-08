@@ -3,42 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="style.css">
-  <title>UFSCVAIJUNTO</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>AcademyWay - Caronas Universitárias</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link rel="shortcut icon" href="img/logouvj.png">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header>
-    <h1>UFSCVaiJunto</h1>
-    <p>Conectando estudantes para economizar e colaborar</p>
+    <h1>AcademyWay</h1>
+    <p>Conectando comunidades acadêmicas para economizar e colaborar</p>
   </header>
 
   <main>
     <div class="hero">
       <h1>Precisa de uma carona? Ou tem vagas no seu carro?</h1>
       <p>Ofereça ou peça uma carona com segurança e praticidade.</p>
+
       <div class="buttons">
-        <a href="oferecer.html" class="button"><i class="fa-solid fa-car-side"></i>Oferecer Carona</a>
-        <a href="pedir.html" class="button"><i class="fa-solid fa-hand-holding-hand"></i> Pedir Carona</a>        
-        <a href="ver-pedidos.html" class="button"><i class="fa-solid fa-list-check"></i> Ver Pedidos de Carona</a>
+        <a href="oferecer.html" class="button"><i class="fa-solid fa-car-side"></i> Oferecer Carona</a>
+        <a href="pedir.html" class="button"><i class="fa-solid fa-hand-holding-hand"></i> Pedir Carona</a>
+        <a href="ver-caronas.html" class="button"><i class="fa-solid fa-magnifying-glass"></i> Ver Caronas</a>
+        <a href="ver-pedidos.html" class="button"><i class="fa-solid fa-list-check"></i> Ver Pedidos</a>
+        <a href="minhas-caronas.html" class="button"><i class="fa-solid fa-user-shield"></i> Minhas Caronas e Lances</a>
         <a href="sugestoes.html" class="button"><i class="fa-solid fa-lightbulb"></i> Dar uma Sugestão</a>
       </div>
+      
     </div>
   </main>
 
   <footer>
-    <p>Entre em contato: ufscvaijunto@gmail.com</p>
+    <p>Entre em contato: contato@academyway.com</p>
     <div class="copyright">
-      &copy; <span id="current-year"></span> UFSCVaiJunto. Todos os direitos reservados.
+      &copy; <span id="current-year"></span> AcademyWay. Todos os direitos reservados.
     </div>
   </footer>
-</body>
+  
   <script>
-    // Pega o ano atual e insere no elemento com id="current-year"
     document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>
 
-  </body>
+</body>
 </html>

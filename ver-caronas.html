@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Caronas Disponíveis - UFSCVaiJunto</title>
+  <title>Caronas Disponíveis - AcademyWay</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
@@ -21,10 +21,47 @@
     </div>
   </main>
 
+  <div id="bid-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Fazer um Lance</h2>
+      <p>Sua oferta será enviada ao motorista.</p>
+      
+      <form id="bid-form">
+        <input type="hidden" name="data[id_carona]" id="modal_id_carona">
+        <input type="hidden" name="data[data_lance]" id="modal_data_lance">
+        <input type="hidden" name="data[valor_lance]" id="modal_valor_lance_hidden">
+
+        <div class="form-group">
+          <label for="modal_nome_passageiro"><i class="fa-solid fa-user"></i> Seu Nome:</label>
+          <input type="text" name="data[nome_passageiro]" id="modal_nome_passageiro" placeholder="Seu nome" required>
+        </div>
+
+        <div class="form-group">
+          <label for="modal_contato_passageiro"><i class="fa-solid fa-address-book"></i> Seu Contato:</label>
+          <input type="text" name="data[contato_passageiro]" id="modal_contato_passageiro" placeholder="WhatsApp ou E-mail" required>
+        </div>
+
+        <div class="bid-slider-container">
+          <label>Defina sua oferta:</label>
+          <div id="selected-bid-amount">R$ 10,00</div>
+          <input type="range" min="2" max="100" value="10" step="1" class="slider" id="bid-slider">
+          <div class="slider-labels">
+            <span>R$ 2</span>
+            <span>R$ 100</span>
+          </div>
+        </div>
+
+        <button type="submit" id="modal-submit-button" class="button">
+          <i class="fa-solid fa-paper-plane"></i> Enviar Lance
+        </button>
+      </form>
+    </div>
+  </div>
   <footer>
-    <p>Entre em contato: ufscvaijunto@gmail.com</p>
+    <p>Entre em contato: academyway@gmail.com</p>
     <div class="copyright">
-      &copy; <span id="current-year"></span> UFSCVaiJunto. Todos os direitos reservados.
+      &copy; <span id="current-year"></span> AcademyWay. Todos os direitos reservados.
     </div>
   </footer>
 
